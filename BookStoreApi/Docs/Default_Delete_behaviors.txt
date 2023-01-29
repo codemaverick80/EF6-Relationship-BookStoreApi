@@ -1,0 +1,24 @@
+
+
+var author = await _context.Authors
+            .Include(x => x.Books)
+            .Where(x => x.Id == id)
+            .FirstOrDefaultAsync();
+        
+_context.Remove(author);
+await _context.SaveChangesAsync();
+      
+
+
+
+
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+ Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      DELETE FROM book_author
+      WHERE author_id = @p0 AND book_id = @p1;
+      DELETE FROM book_author
+      WHERE author_id = @p2 AND book_id = @p3;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p4='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      DELETE FROM authors
+      WHERE id = @p4;
