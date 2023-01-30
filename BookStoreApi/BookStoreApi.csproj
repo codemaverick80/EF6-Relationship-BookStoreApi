@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-    </PropertyGroup>
+      <UserSecretsId>33e0d8b6-9ff9-43e8-8be8-835ef71b963b</UserSecretsId>
+  </PropertyGroup>
 
     <ItemGroup>
          <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.13" />
